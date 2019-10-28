@@ -1,7 +1,7 @@
 const TypingWidget = new function () {
 	const _this = this;
 
-	_this.init = (text, containerEl, options) => {
+	_this.init = (text, containerEl, options = {}) => {
 		const longPause = options.longPause || 800;
 		const keyStrokePause =  options.keyStrokePause || 200;
 		const deletePause =  options.deletePause || 50;
@@ -32,18 +32,12 @@ const TypingWidget = new function () {
 			const textEl = document.createElement('div');
 			textEl.className = 'typing-widget-text';
 			setStyleFromObj(textEl, {
-				textTransform: 'uppercase',
-				fontWeight: options.fontWeight || 300,
-				fontSize: options.fontSize ? `${options.fontSize}px` : '18px',
-				color: options.textColor || '#000',
 				placeSelf: 'end'
 			});
 			const cursorEl = document.createElement('div');
 			cursorEl.className = 'typing-widget-cursor';
 			cursorEl.innerText = "|";
 			setStyleFromObj(cursorEl, {
-				fontSize: options.fontSize ?  `${options.fontSize*1.2}px` : '20px',
-				color: options.cursorColor || '#000',
 				placeSelf: 'end'
 			});
 			displayEl.appendChild(textEl);
