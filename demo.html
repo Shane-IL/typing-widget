@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Typing Widget</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script src="./typing-widget.js"></script>
+
+
+    <script>
+		ready(() => {
+			TypingWidget.init('This is some text to type', document.querySelector('.typing-widget-container'));
+		});
+		function ready(callback){
+			if (document.readyState!=='loading') callback();
+			else document.addEventListener('DOMContentLoaded', callback);
+		}
+    </script>
+
+    <style>
+        body {
+            margin: 0;
+            background: rgba(0,0,0,0.2);
+            display: grid;
+            height: 100%;
+            text-align: center;
+            font-family: "Roboto", sans-serif;
+        }
+
+        .typing-widget-container {
+            place-self: center;
+            margin-top: 10vmin;
+        }
+
+
+        .typing-widget-cursor {
+            font-size: 52px;
+            color: blue;
+        }
+
+        .typing-widget-text {
+            text-transform: uppercase;
+            font-weight: 300;
+            font-size: 45px;
+        }
+    </style>
+</head>
+<body>
+    <h1>The Typing Widget Demo</h1>
+    <div class="typing-widget-container"></div>
+</body>
+</html>
